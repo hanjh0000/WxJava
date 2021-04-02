@@ -236,7 +236,7 @@ public interface WxCpExternalContactService {
    * 微信文档：https://work.weixin.qq.com/api/doc/90000/90135/92119
    * </pre>
    *
-   * @param pageIndex the page index
+   * @param cursor the cursor for pagination,empty for the first time,get it from the last response
    * @param pageSize  the page size
    * @param status    the status
    * @param userIds   the user ids
@@ -244,7 +244,7 @@ public interface WxCpExternalContactService {
    * @return the wx cp user external group chat list
    * @throws WxErrorException the wx error exception
    */
-  WxCpUserExternalGroupChatList listGroupChat(Integer pageIndex, Integer pageSize, int status, String[] userIds, String[] partyIds) throws WxErrorException;
+  WxCpUserExternalGroupChatList listGroupChat(String cursor, Integer pageSize, int status, String[] userIds, String[] partyIds) throws WxErrorException;
 
   /**
    * <pre>

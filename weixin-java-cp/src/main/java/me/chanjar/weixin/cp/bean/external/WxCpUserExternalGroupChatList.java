@@ -19,6 +19,9 @@ public class WxCpUserExternalGroupChatList extends WxCpBaseResp {
   @SerializedName("group_chat_list")
   private List<ChatStatus> groupChatList;
 
+  @SerializedName("next_cursor")
+  private String nextCursor;
+
   @Getter
   @Setter
   public static class ChatStatus {

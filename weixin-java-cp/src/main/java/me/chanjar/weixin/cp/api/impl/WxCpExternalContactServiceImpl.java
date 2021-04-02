@@ -177,9 +177,9 @@ public class WxCpExternalContactServiceImpl implements WxCpExternalContactServic
   }
 
   @Override
-  public WxCpUserExternalGroupChatList listGroupChat(Integer pageIndex, Integer pageSize, int status, String[] userIds, String[] partyIds) throws WxErrorException {
+  public WxCpUserExternalGroupChatList listGroupChat(String cursor, Integer pageSize, int status, String[] userIds, String[] partyIds) throws WxErrorException {
     JsonObject json = new JsonObject();
-    json.addProperty("offset", pageIndex == null ? 0 : pageIndex);
+    json.addProperty("cursor", cursor == null ? "" : cursor);
     json.addProperty("limit", pageSize == null ? 100 : pageSize);
     json.addProperty("status_filter", status);
     if (ArrayUtils.isNotEmpty(userIds) || ArrayUtils.isNotEmpty(partyIds)) {
